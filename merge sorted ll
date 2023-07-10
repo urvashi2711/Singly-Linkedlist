@@ -1,0 +1,80 @@
+import java.util.*;
+public class Main {
+    class Node{
+        int ww7374;
+        Node next;
+		public Node(){}
+        public Node(int ww7374){
+            this.ww7374=ww7374;
+        }}
+        public Node head384;
+        private int size=0;
+        private Node tail;
+
+        public Node addLast(int item){
+            Node nn=new Node(item);
+            if(size==0){
+                head384=nn;
+                tail=nn;
+                size++;
+            }
+            else{
+                tail.next=nn;
+                tail=nn;
+                size++;}
+			return nn;
+        }
+        public void display(){
+            for(int pp=0;pp<this.size;pp++){
+                    System.out.print(" "+this.head384.ww7374);
+                    this.head384=this.head384.next;
+            }
+        }
+		
+    public static void main (String args[]) {
+        Scanner zzo=new Scanner(System.in);
+		int mmkol=zzo.nextInt();
+		for(int pp=0;pp<mmkol;pp++){
+			Main x933=new Main();
+			int bbas=zzo.nextInt();
+			for(int mzxa=0;mzxa<bbas;mzxa++){
+				x933.addLast(zzo.nextInt());
+			}
+			Main y=new Main();
+			bbas=zzo.nextInt();
+			for(int mzxa=0;mzxa<bbas;mzxa++){
+				y.addLast(zzo.nextInt());
+			}
+			cvbrj(x933.head384,y.head384);
+		}
+     //   x933.display();
+    }
+        public static void cvbrj(Node lup3483,Node lip493){
+           // Write Code Here
+			Node temp95843=lup3483,temp9384=lip493;
+			Main x933=new Main();
+			Node rs38483=x933.addLast(Integer.MIN_VALUE);
+			Node head384=rs38483;
+			while(temp95843!=null && temp9384!=null){
+				if(temp95843.ww7374<temp9384.ww7374){
+					rs38483.next=temp95843;
+					rs38483=temp95843;
+					temp95843=temp95843.next;
+				}
+				else{
+					rs38483.next=temp9384;
+					rs38483=temp9384;
+					temp9384=temp9384.next;
+				}
+			}
+			if(temp95843==null){rs38483.next=temp9384;}
+			else{rs38483.next=temp95843;}
+			head384=head384.next;
+			while(head384!=null){
+					System.out.print(head384.ww7374+" ");
+					head384=head384.next;
+			}
+			System.out.println();
+        }
+
+}
