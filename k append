@@ -1,0 +1,192 @@
+Given a linked list of length N and an integer K , append the last K elements of a linked list to the front. Note that K can be greater than N.
+
+Input Format
+First line contains a single integer N denoting the size of the linked list.
+Second line contains N space separated integers denoting the elements of the linked list.
+Third line contains a single integer K denoting the number of elements that are to be appended.
+
+Constraints
+1 <= N <= 10^4
+1 <= K <= 10^4
+
+Output Format
+Display all the elements in the modified linked list.
+
+Sample Input
+7
+1 2 2 1 8 5 6
+3
+Sample Output
+8 5 6 1 2 2 1
+
+//
+
+import java.util.*;
+
+
+class Main{
+
+
+
+	public static void pt5876(node vb364) {
+
+        node lefter47843 = vb364;
+
+        while (lefter47843 != null) {
+
+            System.out.print(lefter47843.lara6374 + " ");
+
+            lefter47843 =lefter47843.next;
+
+        }
+
+    }
+
+
+
+
+    public static node APPENDS(node vb364, int opse8394) {
+
+        if (vb364 == null || opse8394 == 0)
+
+            return vb364;
+
+        int lenh4758 = glr454(vb364);
+
+        opse8394 = opse8394 % lenh4758;
+
+        if (opse8394 == 0)
+
+            return vb364;
+
+        node lefter47843 = vb364;
+
+        node test3572 = null;
+
+        node hets6834 = null;
+
+        int cc7383 = 1;
+
+        while (lefter47843 != null) {
+
+            if (cc7383 == lenh4758 - opse8394)
+
+                test3572 = lefter47843;
+
+            if (cc7383 == lenh4758 - opse8394 + 1)
+
+                hets6834 = lefter47843;
+
+            lefter47843 = lefter47843.next;
+
+            cc7383++;
+
+        }
+
+        test3572.next = null;
+
+
+        node temp394 = hets6834;
+
+        while (temp394.next != null)
+
+            temp394 = temp394.next;
+
+        temp394.next = vb364;
+
+        return hets6834;
+
+    }
+
+
+
+    public static int glr454(node vb364) {
+
+        int lenh4758 = 0;
+
+        node lefter47843 = vb364;
+
+        while (lefter47843 != null) {
+
+            lenh4758++;
+
+            lefter47843 = lefter47843.next;
+
+        }
+
+        return lenh4758;
+
+    }
+
+
+
+    public static void main(String[] args) {
+
+
+        Scanner ioer385 = new Scanner(System.in);
+
+        int nn485 = ioer385.nextInt();
+
+        node vb364 = null;
+
+        node temp394 = null;
+
+        for (int ii8384 = 0; ii8384 < nn485; ii8384++) {
+
+            int dat3547 = ioer385.nextInt();
+
+            node newnode7384 = new node(dat3547);
+
+
+            if (vb364 == null) {
+
+                vb364 = newnode7384;
+
+                temp394 = newnode7384;
+
+            }
+
+
+            else {
+
+                temp394.next = newnode7384;
+
+                temp394 = newnode7384;
+
+            }
+
+        }
+
+        int opse8394 = ioer385.nextInt();
+
+        vb364 = APPENDS(vb364, opse8394);
+
+
+        pt5876(vb364);
+
+    }
+
+}
+
+
+
+
+
+class node {
+
+
+    int lara6374;
+
+
+    node next;
+
+    node(int lara6374) {
+
+        this.lara6374 = lara6374;
+
+
+        this.next = null;
+
+    }
+
+}
